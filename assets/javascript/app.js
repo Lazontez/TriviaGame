@@ -13,7 +13,7 @@ var questions = [{
     answer: 0
 }, {
     question: ["What's the closest we've ever gotten to the sun?"],
-    choices: ["Unknown species in 4560 came within 20 billion k/s", "America took a selfie with the sun within 21 thousand km", "Asia in 1221 landed and discoverred life on the sun", "West Germany got within 45 million km of the sun"],
+    choices: ["Unknown species in 4560 came within 20 billion k/s", "America took a selfie with the sun within 21 feet from the sun", "Asia in 1221 landed and discoverred life on the sun", "West Germany got within 45 million km of the sun"],
     answer: 3
 },
 {
