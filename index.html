@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <title>Trivia Game</title>
+</head>
+
+<body>
+    <div id="Title">
+        <h1 style="text-align: center">Astronomy Trivia</h1>
+    </div>
+
+
+    <div id="starter">
+        <a class="btn btn-dark btn-lg" role="button" id="startBtn">Start</a>
+    </div>
+
+
+    <div  id="quiz">
+        <div id="timeCount"></div>
+        <div id="questions">Question</div>
+        <ul id="choices">
+            <li>choice 1</li>
+            <li>choice 2</li>
+            <li>choice 3</li>
+            <li>choice 4</li>
+
+        </ul>
+
+        <a class="btn btn-success btn-lg" role="button" id="submitBtn">Submit Answer</a>
+
+    </div>
+
+    <div id="results">
+        <h2>Your Results</h2>
+        <div id="correct">You answered X correct</div>
+        <div id="incorrect">You answered X incorrect</div>
+        <div id="unanswered">You failed to answer X questions</div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
