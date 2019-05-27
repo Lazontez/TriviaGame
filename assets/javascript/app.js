@@ -51,9 +51,13 @@ window.onload = function () {
         }
     })
 
-    if (confirm === true) {
+   
+    
+    $("#resetBtn").click(function () {
         resetGame()
-    }
+
+
+    })
 }
 
 function selected() {
@@ -109,8 +113,9 @@ jQuery(function ($) {
 
 
 function resetGame() {
+   
     $("#results").hide()
-    $("#starter").show()
+    initialize()
     correctAnswer = 0;
     incorrectAnswer = 0;
     unanswered = 0;
@@ -138,25 +143,15 @@ function checkAnswer() {
     else {
         showQuestion()
     }
-    function promptToRestart() {
-        setTimeout(function () {
-            confirm("Would you like to start over?")
-
-        }
-
-            , 5000)
-
-        if (confirm === true) {
-            resetGame()
-        }
-    }
+    
+    
     function showResults() {
         $("#quiz").hide()
         $("#results").show()
         $("#correct").text("You answered " + correctAnswer + " questions correct")
         $("#incorrect").text("You answered " + incorrectAnswer + " questions Incorrect")
         $("#unanswered").text("You failed to answer " + unanswered + " questions")
-        promptToRestart()
+        
 
 
     }
