@@ -85,7 +85,7 @@ function startTimer(duration, display) {
 
     var timer = duration, seconds;
     setInterval(function () {
-        seconds = parseInt(timer % 60, 10);
+        seconds = parseInt(timer % 30, 10);
 
         seconds = seconds < 10 ? "" + seconds : seconds;
 
@@ -121,11 +121,14 @@ function checkAnswer() {
     var question = questions[currentQuestion]
     if (question.answer === guessed) {
         correctAnswer++
+        alert("Correct")
         console.log("Correct, total correct= " + correctAnswer)
 
     }
     else {
         incorrectAnswer++
+        alert("Sorry, thats wrong :(")
+
     }
     currentQuestion++
 
