@@ -27,13 +27,16 @@ var questions = [{
     choices: ["Whyoming", "Jupiter", "Mars", "Venus"],
     answer: 1
 }]
-var remainingTime = 55
+var remainingTime = 0
 var unanswered = 0
 var correctAnswer = 0
 var incorrectAnswer = 0
 var currentQuestion = 0
 var guessed;
-
+var timer;
+var seconds;
+var display;
+var time;
 
 
 
@@ -117,33 +120,42 @@ function showQuestion() {
         console.log(questions[i].question)
         console.log(questions[i].choices)
     }
+//     jQuery(function ($) {
+//         time = 20 * 1,
+//            display = $('#timeCount');
+//        // console.log(display)
+//        startTimer(time, display);
+//    })
+   
 
 }
-function startTimer(duration, display) {
+// function startTimer(duration, display) {
+// //Creates a variable that has the duration and seconds in it
+//     timer = duration, seconds;
+//     setInterval(function () {
 
-    var timer = duration, seconds;
-    setInterval(function () {
-        seconds = parseInt(timer % 30, 10);
+//         seconds = parseInt(timer % 60, 10);
 
-        seconds = seconds < 10 ? "" + seconds : seconds;
+//         seconds = seconds < 10 ? "" + seconds : seconds;
 
-        display.text(seconds + (" seconds Remaining"));
+//         display.text(seconds + (" seconds Remaining"));
 
-        if (--timer < 0) {
-            timer = duration;
-        }
-        else if (timer === 0) {
-            // console.log("Times Up")
-            display.text("TIMES UP")
-        }
-    }, 1000);
-}
-jQuery(function ($) {
-    var time = 60 * 1,
-        display = $('#timeCount');
-    // console.log(display)
-    startTimer(time, display);
-})
+//         if (--timer < 0) {
+//             timer = duration;
+
+//         }
+//         else if (timer === 0) {
+//             // console.log("Times Up")
+//             alert("TIMES UP")
+//             checkAnswer()
+//             unanswered++
+            
+//         }
+//     }, 1000);
+// }
+
+
+
 
 
 function resetGame() {
@@ -196,7 +208,7 @@ function checkAnswer() {
         //show the results
         $("#results").show()
         //Show the user there results
-        
+
         $("#correct").text("You answered " + correctAnswer + " questions correct")
         $("#incorrect").text("You answered " + incorrectAnswer + " questions Incorrect")
         $("#unanswered").text("You failed to answer " + unanswered + " questions")

@@ -1,8 +1,7 @@
 body{
     font-family: 'Stylish', sans-serif;
-    background-image:src("/assets/images/memphis-mini-dark.png")
+    background-image: url("spaceBackground.jpg");
 }
-
 #quiz, #results{
     display:none;
 }
@@ -44,4 +43,7 @@ ul{
 }
 #choices{
     font-size: 20px;
+}
+#title{
+    color: whitesmoke;
 }
