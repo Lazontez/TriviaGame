@@ -8,7 +8,7 @@
 var questions = [{
     question: ["What is a SuperNova"],
     choices: ["A red planet", "When a star disapears", "The explosion of a star", "The home of Superheros"],
-    answer: 0
+    answer: 1
 }, {
     question: ["What is the speed of light?"],
     choices: ["299 792 458 m/s", "399mph", "228 698 m/s", "10000000mph"],
@@ -141,8 +141,10 @@ function startTimer(duration, display) {
         seconds = parseInt(timer % 60, 10);
 
         seconds = seconds < 10 ? "" + seconds : seconds;
+        
 
         display.text(seconds + (" seconds Remaining"));
+        
         console.log(timer)
         if (timer-- < 0) {
             timer = duration;
