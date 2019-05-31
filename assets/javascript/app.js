@@ -37,6 +37,7 @@ var timer;
 var seconds;
 var display;
 var time;
+var timeInterval;
 
 
 
@@ -120,42 +121,50 @@ function showQuestion() {
         console.log(questions[i].question)
         console.log(questions[i].choices)
     }
-//     jQuery(function ($) {
-//         time = 20 * 1,
-//            display = $('#timeCount');
-//        // console.log(display)
-//        startTimer(time, display);
-//    })
+    jQuery(function ($) {
+        time = 20 * 1,
+           display = $('#timeCount');
+       // console.log(display)
+       clearInterval(timeInterval)
+       startTimer(time, display);
+
+   })
    
 
+
 }
-// function startTimer(duration, display) {
-// //Creates a variable that has the duration and seconds in it
-//     timer = duration, seconds;
-//     setInterval(function () {
+function startTimer(duration, display) {
+//Creates a variable that has the duration and seconds in it
+    timer = duration, seconds;
+    timeInterval=setInterval(function () {
 
-//         seconds = parseInt(timer % 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-//         seconds = seconds < 10 ? "" + seconds : seconds;
+        seconds = seconds < 10 ? "" + seconds : seconds;
 
-//         display.text(seconds + (" seconds Remaining"));
-
-//         if (--timer < 0) {
-//             timer = duration;
-
-//         }
-//         else if (timer === 0) {
-//             // console.log("Times Up")
-//             alert("TIMES UP")
-//             checkAnswer()
-//             unanswered++
+        display.text(seconds + (" seconds Remaining"));
+        console.log(timer)
+        if (timer-- < 0) {
+            timer = duration;
             
-//         }
-//     }, 1000);
-// }
+
+        }
+        else if (timer === 0) {
+            // console.log("Times Up")
+            timesUp()
+            unanswered++
+            checkAnswer()
+            showQuestion()
+
+            
+        }
+    }, 1000);
+}
 
 
-
+function timesUp(){
+    display.text("No time remaining")
+}
 
 
 function resetGame() {
